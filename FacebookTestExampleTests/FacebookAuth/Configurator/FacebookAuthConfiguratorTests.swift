@@ -19,6 +19,7 @@ class FacebookAuthModuleConfiguratorTests: XCTestCase {
     super.tearDown()
   }
 
+  /// test for module assembly
   func testConfigureModuleForViewController() {
 
     //given

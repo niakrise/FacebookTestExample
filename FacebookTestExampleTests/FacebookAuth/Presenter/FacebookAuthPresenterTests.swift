@@ -24,6 +24,7 @@ class FacebookAuthPresenterTest: XCTestCase {
     super.tearDown()
   }
   
+  /// Returns an equality matcher for ReadPermission
   func equal(to value: [ReadPermission]) -> ParameterMatcher<[ReadPermission]> {
     return ParameterMatcher { tested in
       if value.count != tested.count {
@@ -38,6 +39,7 @@ class FacebookAuthPresenterTest: XCTestCase {
     }
   }
   
+  /// Returns an equality matcher for UIViewController
   func equal(to value: UIViewController?) -> ParameterMatcher<UIViewController?> {
     return ParameterMatcher { tested in
       if value == nil && tested == nil {
@@ -82,6 +84,8 @@ class FacebookAuthPresenterTest: XCTestCase {
     let assembly = FacebookAuthModuleAssembly()
     assembly.configureModuleForViewInput(viewInput: viewController)
     let presenter = viewController.output as! FacebookAuthPresenter
+    
+    // replace facebook login manager to mock
     let loginManager = MockFacebookAuthProtocol()
     presenter.facebookService.loginManager = loginManager
     

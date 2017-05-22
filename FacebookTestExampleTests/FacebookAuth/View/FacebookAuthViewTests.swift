@@ -17,19 +17,21 @@ class FacebookAuthViewTests: XCTestCase {
 
   override func setUp() {
     super.setUp()
+    // configure module
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     viewController = storyboard.instantiateViewController(withIdentifier: "FacebookAuthViewControllerID") as! FacebookAuthViewController
     
+    // replace presenter to mock
     presenterMock = MockFacebookAuthPresenter().spy(on: viewController.output as! FacebookAuthPresenter)
     viewController.output = presenterMock
     presenterMock.view = viewController
     
+    // emulate the module display and start the life cycle
     UIApplication.shared.keyWindow?.rootViewController = viewController
     let _ = viewController.view
   }
 
   override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     super.tearDown()
   }
   
@@ -46,8 +48,8 @@ class FacebookAuthViewTests: XCTestCase {
       XCTAssertTrue(actions.contains("loginButtonTapped:"), "login button have wrong action")
       
       var loginViaFacebookDidCall = false
-      stub(presenterMock) { presenterMock in
-        presenterMock.loginViaFacebook().then {
+      stub(presenterMock) { stub in
+        stub.loginViaFacebook().then {
           loginViaFacebookDidCall = true
         }
       }
@@ -63,9 +65,9 @@ class FacebookAuthViewTests: XCTestCase {
     let message = "Alert"
     viewController.showAlert(message: message)
     
-    XCTAssertTrue(viewController.presentedViewController is UIAlertController)
+    XCTAssertTrue(viewController.presentedViewController is UIAlertController, "Unknown alert type. Type must be UIAlertController")
     let alertController = viewController.presentedViewController as! UIAlertController
-    XCTAssertEqual(alertController.message, message)
+    XCTAssertEqual(alertController.message, message, "Incoming and outgoing messages don't match")
   }
   
 }
