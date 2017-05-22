@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0514879F8F45E33C6D82A1B9 /* FacebookAuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C2CD3C9C919A13C465494 /* FacebookAuthPresenter.swift */; };
-		07233AB8570B6B592AE5067E /* FacebookAuthPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24ABA16F6B722933C7D0371 /* FacebookAuthPresenterTests.swift */; };
 		0D3554F5ECEFCF3EF4BF435F /* FacebookAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8499A86D88CD6CD5B15148 /* FacebookAuthViewController.swift */; };
 		2B77249D6802A2FB71B25493 /* FacebookAuthConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C7963B5C4ECFFE4551871 /* FacebookAuthConfiguratorTests.swift */; };
 		4F1E64B204297453040CD496 /* FacebookAuthStoryboardAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE74B2E4BA251C8D1CDDFF2 /* FacebookAuthStoryboardAssembly.swift */; };
@@ -17,6 +16,9 @@
 		A4574B5C9CA3ADB441BA6E69 /* Pods_FacebookTestExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7935560DCDD14CACB3A00141 /* Pods_FacebookTestExample.framework */; };
 		BB4B3BB4404776F07E07FD51 /* FacebookAuthViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7581577CF622723EA7F3DB /* FacebookAuthViewTests.swift */; };
 		CC85084757C656E20C9DC8C4 /* FacebookAuthViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF0C6702004C8AD62B2BD3 /* FacebookAuthViewOutput.swift */; };
+		CD1BF9B51ED2F5E500A3CF86 /* FacebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1BF9B41ED2F5E500A3CF86 /* FacebookTests.swift */; };
+		CD1BF9B71ED305A000A3CF86 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1BF9B61ED305A000A3CF86 /* Facebook.swift */; };
+		CD1BF9BB1ED3120400A3CF86 /* FacebookAuthPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1BF9BA1ED3120400A3CF86 /* FacebookAuthPresenterTests.swift */; };
 		CD28A52F1ECA755700750342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD28A52E1ECA755700750342 /* AppDelegate.swift */; };
 		CD28A5341ECA755700750342 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD28A5321ECA755700750342 /* Main.storyboard */; };
 		CD28A5361ECA755700750342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD28A5351ECA755700750342 /* Assets.xcassets */; };
@@ -50,8 +52,10 @@
 		836C2CD3C9C919A13C465494 /* FacebookAuthPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FacebookAuthPresenter.swift; sourceTree = "<group>"; };
 		8C8499A86D88CD6CD5B15148 /* FacebookAuthViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FacebookAuthViewController.swift; sourceTree = "<group>"; };
 		9D6C7963B5C4ECFFE4551871 /* FacebookAuthConfiguratorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FacebookAuthConfiguratorTests.swift; sourceTree = "<group>"; };
-		B24ABA16F6B722933C7D0371 /* FacebookAuthPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FacebookAuthPresenterTests.swift; sourceTree = "<group>"; };
 		CBE74B2E4BA251C8D1CDDFF2 /* FacebookAuthStoryboardAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FacebookAuthStoryboardAssembly.swift; sourceTree = "<group>"; };
+		CD1BF9B41ED2F5E500A3CF86 /* FacebookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookTests.swift; sourceTree = "<group>"; };
+		CD1BF9B61ED305A000A3CF86 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
+		CD1BF9BA1ED3120400A3CF86 /* FacebookAuthPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookAuthPresenterTests.swift; sourceTree = "<group>"; };
 		CD28A52B1ECA755700750342 /* FacebookTestExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookTestExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD28A52E1ECA755700750342 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD28A5331ECA755700750342 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,7 +107,7 @@
 		2195AC7DCC320649C97824ED /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				B24ABA16F6B722933C7D0371 /* FacebookAuthPresenterTests.swift */,
+				CD1BF9BA1ED3120400A3CF86 /* FacebookAuthPresenterTests.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -165,6 +169,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CD1BF9B31ED2F59F00A3CF86 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CD1BF9B41ED2F5E500A3CF86 /* FacebookTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		CD28A5221ECA755700750342 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +232,7 @@
 		CD2CA89B1ECECB6200C118C7 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				CD1BF9B61ED305A000A3CF86 /* Facebook.swift */,
 				CD2CA8AA1ECF077A00C118C7 /* FacebookAuthProtocol.swift */,
 				CD2CA89E1ECED23100C118C7 /* FacebookAuthViewController.swift */,
 				CD2CA89C1ECECB6200C118C7 /* FacebookAuthPresenter.swift */,
@@ -251,6 +264,7 @@
 				89DF5680C5930D822B6B3BB4 /* Configurator */,
 				8C5EC12037AE061DC8717BA0 /* View */,
 				2195AC7DCC320649C97824ED /* Presenter */,
+				CD1BF9B31ED2F59F00A3CF86 /* Service */,
 			);
 			path = FacebookAuth;
 			sourceTree = "<group>";
@@ -433,7 +447,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nOUTPUT_DIR=\"./${PROJECT_NAME}Tests/Mocks\"\necho \"Generated Mocks Directory = ${OUTPUT_DIR}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\necho \"Pods Directory = ${PODS_ROOT}/Cuckoo/\"\n\n${PODS_ROOT}/Cuckoo/run generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_DIR}/\" \\\n\"${INPUT_DIR}/FacebookAuth/Presenter/FacebookAuthPresenter.swift\" \\\n\"${INPUT_DIR}/FacebookAuth/View/FacebookAuthViewController.swift\" \\\n\"${INPUT_DIR}/FacebookAuth/Service/FacebookAuthProtocol.swift\"\n";
+			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nOUTPUT_DIR=\"./${PROJECT_NAME}Tests/Mocks\"\necho \"Generated Mocks Directory = ${OUTPUT_DIR}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\necho \"Pods Directory = ${PODS_ROOT}/Cuckoo/\"\n\n${PODS_ROOT}/Cuckoo/run generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_DIR}/\" \\\n\"${INPUT_DIR}/FacebookAuth/Presenter/FacebookAuthPresenter.swift\" \\\n\"${INPUT_DIR}/FacebookAuth/View/FacebookAuthViewController.swift\" \\\n\"${INPUT_DIR}/FacebookAuth/Service/FacebookAuthProtocol.swift\" \\\n\"${INPUT_DIR}/FacebookAuth/Service/Facebook.swift\"\n";
 		};
 		D634D2563ECD7EC2C75F987C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -491,9 +505,11 @@
 			files = (
 				2B77249D6802A2FB71B25493 /* FacebookAuthConfiguratorTests.swift in Sources */,
 				CD2CA8AB1ECF077A00C118C7 /* FacebookAuthProtocol.swift in Sources */,
+				CD1BF9B51ED2F5E500A3CF86 /* FacebookTests.swift in Sources */,
+				CD1BF9B71ED305A000A3CF86 /* Facebook.swift in Sources */,
+				CD1BF9BB1ED3120400A3CF86 /* FacebookAuthPresenterTests.swift in Sources */,
 				BB4B3BB4404776F07E07FD51 /* FacebookAuthViewTests.swift in Sources */,
 				CD2CA89D1ECECB6200C118C7 /* FacebookAuthPresenter.swift in Sources */,
-				07233AB8570B6B592AE5067E /* FacebookAuthPresenterTests.swift in Sources */,
 				CD2CA89F1ECED23100C118C7 /* FacebookAuthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

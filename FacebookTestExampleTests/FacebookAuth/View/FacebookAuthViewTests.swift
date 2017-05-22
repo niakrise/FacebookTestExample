@@ -47,15 +47,12 @@ class FacebookAuthViewTests: XCTestCase {
     if let actions = viewController.loginButton.actions(forTarget: viewController, forControlEvent: .touchUpInside) {
       XCTAssertTrue(actions.contains("loginButtonTapped:"), "login button have wrong action")
       
-      var loginViaFacebookDidCall = false
       stub(presenterMock) { stub in
-        stub.loginViaFacebook().then {
-          loginViaFacebookDidCall = true
-        }
+        stub.loginViaFacebook().then {}
       }
       
       viewController.loginButtonTapped(viewController.loginButton)
-      XCTAssertTrue(loginViaFacebookDidCall, "presenter method loginViaFacebook was not called")
+      verify(presenterMock, times(1)).loginViaFacebook()
     } else {
       XCTFail("login button don't have action for touchUpInside")
     }

@@ -39,15 +39,16 @@ class FacebookAuthPresenter: FacebookAuthViewOutput {
   }
   
   func loginViaFacebook() {
-    facebookService.getAuthToken { [weak self] (result) in
+    facebookService.getAuthToken { [weak self] (token, error) in
       var message = ""
-      switch result {
-      case .success(_, _, let accessToken):
-        message = String(format: FacebookAuthPresenter.kSuccess, accessToken.authenticationToken)
-      case .cancelled:
-        message = FacebookAuthPresenter.kCancelled
-      case .failed(let error):
+      if let error = error {
         message = String(format: FacebookAuthPresenter.kFailed, error.localizedDescription)
+      } else {
+        if let token = token {
+          message = String(format: FacebookAuthPresenter.kSuccess, token)
+        } else {
+          message = FacebookAuthPresenter.kCancelled
+        }
       }
       self?.view.showAlert(message: message)
     }
